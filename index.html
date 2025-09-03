@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<!-- ************************************************************************************************* -->
+									<!-- VERSION GITHUB -->
+<!-- ************************************************************************************************* -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bons plans 🔥</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #d70000, #9500aa);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        color: #ff4d4d;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: neon 1.5s ease-in-out infinite alternate;
+        cursor: default;
+      }
+
+      @keyframes neon {
+        from {
+          text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+        }
+        to {
+          text-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d;
+        }
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-image: url('krakenimages.jpg'), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-repeat: no-repeat, no-repeat;
+        background-position: center, center;
+        background-size: cover, cover;
+      }
+
+      .hero h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        cursor: default;
+      }
+
+      .hero button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        background: #ff4d4d;
+        color: #fff;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .hero button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #ff4d4d;
+      }
+
+      .cards-section {
+        padding: 50px;
+        max-width: 1200px;
+        margin: 65px auto 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        backdrop-filter: blur(3px);
+      }
+
+      .card {
+        perspective: 1000px;
+        width: 260px;
+        height: 300px;
+        cursor: default;
+        position: relative;
+      }
+
+      .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .card:hover .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        display: block;
+      }
+
+      .card-front {
+        background-color: darkseagreen;
+      }
+
+      .card-back {
+        background: #2a2a4a;
+        color: #fff;
+        transform: rotateY(180deg);
+        flex-direction: column;
+      }
+
+      .card-back h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .card-back p {
+        font-size: 1em;
+        line-height: 1.4;
+      }
+
+      footer {
+        background: #1e1e2f;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      footer p {
+        color: #aaa;
+      }
+	  .Flag {
+	  position: absolute;
+	  top: 97px;
+	  }
+
+      @media (max-width: 768px) {
+        body {
+          background: white;
+        }
+        .header h1 {
+          font-size: 1.7em;
+        }
+        .hero h2 {
+          font-size: 1.5em;
+        }
+        .hero button {
+          padding: 10px 20px;
+          font-size: 1em;
+        }
+        .cards-section {
+          margin: 85px auto 0 auto;
+          grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
+        }
+        .card-front {
+          background-color: darkseagreen;
+        }
+        .card {
+          height: 300px;
+        }
+		.Flag {
+		position: absolute;
+		top: 79px;
+		}
+      }
+
+      .Wina-inner {
+        width: 220px;
+      }
+
+      .p-inner {
+        color: black;
+        margin-block-start: 6px;
+        margin-block-end: 15px;
+        font-size: 1.2em;
+        font-family: arial;
+      }
+
+      a, :visited {
+        color: white;
+      }
+
+      a:hover {
+        color: gold;
+      }
+
+      #ancre {
+        position: absolute;
+        top: 100vh;
+      }
+
+	  .LG {
+	  font-family: arial;
+	  font-size: 1.2em;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	  margin-bottom: 12px;
+	  }
+	  .FRflag {
+	    width: 57px;
+		cursor: not-allowed;
+	  }
+	  .GBflag {
+	    width: 57px;
+	  }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Yo, Bienvenue ! 🔥</h1>
+    </header>
+
+    <section class="hero">
+	
+		<div class="Flag">
+		<p class="LG">Choose language :</p>
+		<img class="FRflag" src="FR.png" alt="Drapeau Français" title="Vous êtes déjà sur la langue FR."/>
+		<a href="https://boby1717.github.io/Good-deals/"><img class="GBflag" src="GB.png" alt="Great Britain's Flag" title="Change for English language."/></a>
+		</div><!--		target="blank_"		-->
+		
+        <h2>Bienvenue dans mes bons plans parrainages, promotions, opportunités and more 🔥</h2>
+        <button onclick="surprise()">Mes bonnes affaires !</button>
+    </section>
+
+    <div id="ancre"></div>
+
+    <section id="Cartes" class="cards-section">
+        <!-- Carte 1 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p class="p-inner">Parrainage Winamax 🔞</p>
+                    <img class="Wina-inner" src="Wina.jpg" alt="Winamax">
+                </div>
+                <div class="card-back">
+                    <h3>Winamax 🔞</h3>
+                    <p>Paris sportifs, poker.<br><br>
+                       Ton premier pari remboursé en cash s’il est perdant (jusqu'à 100 €). Jusqu'à 15€ en ticket Expresso + bonus de 20€.<br><br>
+                       <a href="https://www.winamax.fr/parrain?code=COBVFH">Ça me plait !</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 2 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Jane Smith</h3>
+                    <p>Développeuse Web<br>jane.smith@example.com<br>+33 6 98 76 54 32</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 3 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Mike Johnson</h3>
+                    <p>Photographe<br>mike.j@example.com<br>+33 6 45 67 89 01</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 4 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Anna Lee</h3>
+                    <p>Illustratrice<br>anna.lee@example.com<br>+33 6 23 45 67 89</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 5 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Chris Brown</h3>
+                    <p>Vidéaste<br>chris.brown@example.com<br>+33 6 78 90 12 34</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 6 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Laura White</h3>
+                    <p>Consultante Marketing<br>laura.w@example.com<br>+33 6 56 78 90 12</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 7 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Tom Black</h3>
+                    <p>Développeur Mobile<br>tom.black@example.com<br>+33 6 34 56 78 90</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 8 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Emma Green</h3>
+                    <p>Artiste 3D<br>emma.green@example.com<br>+33 6 12 34 56 78</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 9 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Lucas Grey</h3>
+                    <p>Sound Designer<br>lucas.grey@example.com<br>+33 6 89 01 23 45</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carte 10 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back">
+                    <h3>Sophia Blue</h3>
+                    <p>UX Designer<br>sophia.blue@example.com<br>+33 6 67 89 01 23</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Fait avec 💪 par Grok, ton IA préférée, pour un bro qui déchire ! Photo d'illustration par <a href="https://unsplash.com/fr/@krakenimages?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">krakenimages</a> sur <a href="https://unsplash.com/fr/photos/homme-en-chemise-blanche-assis-a-cote-dune-femme-en-chemise-noire-a-manches-longues-376KN_ISplE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+    </footer>
+
+    <script>
+      function surprise() {
+        var ancre = document.getElementById("ancre");
+        ancre.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
+</body>
+</html>
